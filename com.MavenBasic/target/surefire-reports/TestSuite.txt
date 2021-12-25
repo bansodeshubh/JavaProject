@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 2, Errors: 0, Skipped: 15, Time elapsed: 4.064 s <<< FAILURE! - in TestSuite
+com.maven.ReportTest.openBrowser  Time elapsed: 1.39 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "com.maven.ReportTest.driver" is null
+	at com.maven.ReportTest.openBrowser(ReportTest.java:56)
+
+com.maven.TestNG.openBrowser  Time elapsed: 1.748 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "com.maven.TestNG.driver" is null
+	at com.maven.TestNG.openBrowser(TestNG.java:22)
+
