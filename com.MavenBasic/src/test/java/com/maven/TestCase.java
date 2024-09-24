@@ -62,7 +62,7 @@ public class TestCase {
 		WebElement arrow2 = driver.findElement(By.xpath("//*[@id=\"n2-ss-6-arrow-next\"]/img"));
 		arrow2.click();
 		WebElement slider3 = driver.findElement(By.xpath("//*[@id=\"n2-ss-6\"]/div[1]/div/div/div[3]/div[1]/img"));
-		List<WebElement> slider = new ArrayList<WebElement>();
+		List<WebElement> slider = new ArrayList<>();
 		slider.add(slider1);
 		slider.add(slider2);
 		slider.add(slider3);
@@ -84,7 +84,7 @@ public class TestCase {
 		WebElement arrow2 = driver.findElement(By.xpath("//*[@id=\"n2-ss-6-arrow-next\"]/img"));
 		arrow2.click();
 		WebElement slider3 = driver.findElement(By.xpath("//*[@id=\"n2-ss-6\"]/div[1]/div/div/div[3]/div[1]/img"));
-		List<WebElement> slider = new ArrayList<WebElement>();
+		List<WebElement> slider = new ArrayList<>();
 		slider.add(slider1);
 		slider.add(slider2);
 		slider.add(slider3);
