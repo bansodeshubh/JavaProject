@@ -5,18 +5,18 @@
 
 
 	
-	<test name="ChromeTest">
+	<!-- <test name="ChromeTest">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.maven.TestCase" />
 		</classes>
-	</test>
+	</test> -->
 
-	<!-- <test name="EdgeTest">
+	<test name="EdgeTest">
 		<parameter name="browser" value="edge" />
 		<classes>
 			<class name="com.maven.TestCase" />
 		</classes>
-	</test> -->
+	</test>
 
 </suite>
