@@ -7,8 +7,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.maven2.CrossBrowsing;
-
 public class TestNG {
 public static WebDriver driver;
 	

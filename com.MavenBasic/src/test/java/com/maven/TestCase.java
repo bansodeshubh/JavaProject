@@ -1,4 +1,4 @@
-package com.maven2;
+package com.maven;
 
 import java.util.ArrayList;
 import java.util.List;

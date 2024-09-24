@@ -21,7 +21,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.maven2.CrossBrowsing;
 
 public class ReportTest {
 
