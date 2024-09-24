@@ -1,4 +1,4 @@
-package com;
+package com.maven;
 
 public class Hello {
 

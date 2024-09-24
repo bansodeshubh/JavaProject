@@ -1,7 +1,8 @@
-package com;
+package com.maven;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -83,19 +84,23 @@ public class ExtentReportsForFaceBook {
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
 
-		if (result.getStatus() == ITestResult.FAILURE) {
-			test.log(Status.FAIL, "TEST CASE FAILED is=" + result.getName()); 
-			test.log(Status.FAIL, "TEST CASE FAILED is=" + result.getThrowable());
-			String screenshotpath = ScreenShot.getScreenshot(driver, result.getName()); 
-			test.addScreenCaptureFromPath(screenshotpath);
-		
-		} else if (result.getStatus() == ITestResult.SKIP) {
-			test.log(Status.SKIP, "TEST CASE SkIPPED:" + result.getName());
-			test.log(Status.SKIP, "TEST CASE FAILED is" + result.getThrowable());
-		
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			test.log(Status.PASS, "TEST CASE PASSED:" + result.getName());
-		}
+            switch (result.getStatus()) {
+                case ITestResult.FAILURE:
+                    test.log(Status.FAIL, "TEST CASE FAILED is=" + result.getName());
+                    test.log(Status.FAIL, "TEST CASE FAILED is=" + result.getThrowable());
+                    String screenshotpath = ScreenShot.getScreenshot(driver, result.getName());
+                    test.addScreenCaptureFromPath(screenshotpath);
+                    break;
+                case ITestResult.SKIP:
+                    test.log(Status.SKIP, "TEST CASE SkIPPED:" + result.getName());
+                    test.log(Status.SKIP, "TEST CASE FAILED is" + result.getThrowable());
+                    break;
+                case ITestResult.SUCCESS:
+                    test.log(Status.PASS, "TEST CASE PASSED:" + result.getName());
+                    break;
+                default:
+                    break;
+            }
 	
 	}
 	

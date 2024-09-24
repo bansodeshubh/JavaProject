@@ -6,7 +6,6 @@ import java.lang.reflect.Method;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -65,7 +64,7 @@ public class ReportTest {
 
 	@Test(priority = 2)
 	public void verifyHomePageTitle() {
-		String expectedTitle = "Facebook – log in or sign up";
+		String expectedTitle = "Facebook ï¿½ log in or sign up";
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, expectedTitle);
 	} 
@@ -87,19 +86,23 @@ public class ReportTest {
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
 
-		if (result.getStatus() == ITestResult.FAILURE) {
-			test.log(Status.FAIL, "TEST CASE FAILED is" + result.getName()); 
-			test.log(Status.FAIL, "TEST CASE FAILED is" + result.getThrowable());
-			String screenshotpath = ScreenShot.getScreenshot(driver, result.getName()); 
-			test.addScreenCaptureFromPath(screenshotpath);
-		
-		} else if (result.getStatus() == ITestResult.SKIP) {
-			test.log(Status.SKIP, "TEST CASE SkIPPED:" + result.getName());
-			test.log(Status.SKIP, "TEST CASE FAILED is" + result.getThrowable());
-		
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			test.log(Status.PASS, "TEST CASE PASSED:" + result.getName());
-		}
+            switch (result.getStatus()) {
+                case ITestResult.FAILURE:
+                    test.log(Status.FAIL, "TEST CASE FAILED is" + result.getName());
+                    test.log(Status.FAIL, "TEST CASE FAILED is" + result.getThrowable());
+                    String screenshotpath = ScreenShot.getScreenshot(driver, result.getName());
+                    test.addScreenCaptureFromPath(screenshotpath);
+                    break;
+                case ITestResult.SKIP:
+                    test.log(Status.SKIP, "TEST CASE SkIPPED:" + result.getName());
+                    test.log(Status.SKIP, "TEST CASE FAILED is" + result.getThrowable());
+                    break;
+                case ITestResult.SUCCESS:
+                    test.log(Status.PASS, "TEST CASE PASSED:" + result.getName());
+                    break;
+                default:
+                    break;
+            }
 	
 	}
 	
