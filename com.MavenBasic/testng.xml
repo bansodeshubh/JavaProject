@@ -8,14 +8,14 @@
 	<test name="ChromeTest">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.maven.ReportTest" />
+			<class name="com.maven.TestCase" />
 		</classes>
 	</test>
 
 	<test name="EdgeTest">
 		<parameter name="browser" value="edge" />
 		<classes>
-			<class name="com.maven.TestNG" />
+			<class name="com.maven.TestCase" />
 		</classes>
 	</test>
 
