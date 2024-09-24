@@ -22,6 +22,8 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class ExtentReportsForFaceBook {
 
 	public static WebDriver driver;
@@ -48,7 +50,7 @@ public class ExtentReportsForFaceBook {
 	
 	@BeforeClass
 	public void openBrowser() {
-		
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("http://www.facebook.com");
 		driver.manage().window().maximize();

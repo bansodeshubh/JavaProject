@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestCase {
 	WebDriver driver;
@@ -15,16 +16,17 @@ public class TestCase {
 	@Test
 	public void test1() {
 //		1) Open the browser
+        WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
  		driver.manage().window().maximize();
 	}
 
 	@Test
 	public void test2() {
-//	2) Enter the URL “http://practice.automationtesting.in/”
-		driver.get("http://practice.automationtesting.in/");
+//	2) Enter the URL ï¿½https://practice.automationtesting.in/ï¿½
+		driver.get("https://practice.automationtesting.in/");
 		String actualurl = driver.getCurrentUrl();
-		String expectedurl = "http://practice.automationtesting.in/";
+		String expectedurl = "https://practice.automationtesting.in/";
 		Assert.assertEquals(actualurl, expectedurl);
 	}
 
@@ -34,7 +36,7 @@ public class TestCase {
 		driver.findElement(By.xpath("//*[@id=\"menu-item-40\"]/a")).click();
 		Thread.sleep(3000);
 		String actualurl = driver.getCurrentUrl();
-		String expectedurl = "http://practice.automationtesting.in/shop/";
+		String expectedurl = "https://practice.automationtesting.in/shop/";
 		Assert.assertEquals(actualurl, expectedurl);
 	}
 
@@ -44,7 +46,7 @@ public class TestCase {
 		driver.findElement(By.xpath("//*[@id=\"content\"]/nav/a")).click();
 		Thread.sleep(3000);
 		String actualurl = driver.getCurrentUrl();
-		String expectedurl = "http://practice.automationtesting.in/";
+		String expectedurl = "https://practice.automationtesting.in/";
 		Assert.assertEquals(actualurl, expectedurl);
 	}
 

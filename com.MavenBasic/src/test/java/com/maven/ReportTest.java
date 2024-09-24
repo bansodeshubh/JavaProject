@@ -51,7 +51,7 @@ public class ReportTest {
 	public void openBrowser() {
 		
 		//driver = new ChromeDriver();
-	  CrossBrowsing.openBrowser("chrome");
+	    CrossBrowsing.openBrowser("chrome");
 		driver.get("http://www.facebook.com");
 		driver.manage().window().maximize();
 	}
